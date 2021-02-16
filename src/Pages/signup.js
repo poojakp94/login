@@ -6,6 +6,7 @@ import * as profession from '../profession/profession';
 import Paper from '@material-ui/core/Paper'
 import { makeStyles } from '@material-ui/core/styles';
 import {useHistory} from 'react-router-dom';
+import Typography from '@material-ui/core/Typography'
 
 const initialFieldValues = {
     name: '',
@@ -63,6 +64,7 @@ function Signup() {
     return (
         <div style={{display: 'flex', justifyContent: 'center'}}>
         <Paper className={classes.pageContent}>
+        <Typography variant="h6" align="center">Sign up</Typography>
         <Form onSubmit={handleSubmit}>
             <Input 
                 name="name"

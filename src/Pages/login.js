@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper'
 import { makeStyles } from '@material-ui/core/styles';
 import {useHistory} from 'react-router-dom';
+import Typography from '@material-ui/core/Typography'
 
 const initialFieldValues = {
     name: '',
@@ -42,18 +43,21 @@ function Login() {
     return (
         <div style={{display: 'flex', justifyContent: 'center'}}>
         <Paper className={classes.pageContent}>
+        <Typography variant="h6" align="center">Log In</Typography>
         <Form onSubmit={handleSubmit}>
             <Input 
                 name="name"
                 label="Name"
                 value={values.name}
                 onChange={handleInputChange}
+                type="text"
             />
             <Input
                 name="password"
                 label="Password"
                 value={values.password}
                 onChange={handleInputChange}
+                type="password"
             />
             <Button type='submit' variant="outlined" color="primary" style={{textTransform: 'inherit', marginLeft: '25px'}}>
             Log in

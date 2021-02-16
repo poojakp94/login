@@ -13,7 +13,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  NavLink
+  NavLink,
+  Redirect
 } from "react-router-dom";
 
 
@@ -78,7 +79,7 @@ function App() {
         </Toolbar>
     </AppBar>
     <Switch>
-      
+      <Route path='/' exact component={() => <Redirect to="/signup" />}/>
       <Route path='/login' exact component={Login} />
       <Route path='/signup' exact component={Signup} />
       <Route path='/movies' exact component={Movies}/>
