@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from 'react';
+import styled from "styled-components";
+import Login from './Pages/login'
+import Signup from "./Pages/signup";
+import { makeStyles } from '@material-ui/core/styles';
+import {Paper} from "@material-ui/core";
+
+const AppContainer = styled.div`
+  min-height:100vh;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+const useStyles = makeStyles((theme)=> ({
+  pageContent: {
+    margin: theme.spacing(5),
+    padding: theme.spacing(3)
+  }
+}))
 
 function App() {
+  const [isOnLogin, toggleLogin] = useState(true)
+  const classes = useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContainer>
+      
+      <Paper className={classes.pageContent}>
+        {isOnLogin ? <Login /> : <Signup />}
+      </Paper>
+    </AppContainer>
   );
 }
 
